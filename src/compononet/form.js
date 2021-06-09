@@ -1,26 +1,43 @@
 import React ,{useState}from 'react'
 
 const Form = (props) => {
-const [form, setForm] = useState({})
- const inputChange = ()=>{
-     
- }
+const [formData, setFormData] = useState(props.newS)
+
+const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent Form from Refreshing
+    props.handleSubmit(formData); // Submit to Parents desired function
+     //Push back to display page
+  };
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
 
     return (
-        <form>
-            <input  
-            type="text" 
-            name="name"
+        <form onSubmit={handleSubmit}>
+            <input type="text" 
+             name='name'
+             value={formData.name}
+             onChange={handleChange}
+             placeholder='song-name'
+            />
+            <input 
+            type="text"
+            name='time'
+             value={formData.time}
+             onChange={handleChange}
+             placeholder='time'
              />
-              <input  
-            type="text" 
-            name="author"
+              <textarea 
+            type="text"
+            name='author'
+             value={formData.author}
+             onChange={handleChange}
+             placeholder='author'
              />
-              <input  
-            type="text" 
-            name="time"
-             />
+             <input type="submit" value={props.label} />
+
         </form>
+       
     )
 }
 

@@ -15,25 +15,61 @@ function App() {
       console.log('data',data)
     })
   }
-
+  const emptyS = {
+    name: "",
+    time: "",
+    author: "",
+  };
+  const [selectedW,setSelectedW]= useState(emptyS)
    useEffect(()=>{
     getAll()
    },[])
 
-  //  const handleCreate = (newSong)=> {
-  //   fetch(url + '/songs/',{
-  //     method : "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //    },
-  //     body: JSON.stringify(newSong)
-  //   })
-  //   .then(()=> { getAll()})
-  //   }
+   const handleCreate = (newSong)=> {
+    fetch(url + '/songs/',{
+      method : "POST",
+      headers: {
+        "Content-Type": "application/json",
+     },
+      body: JSON.stringify(newSong)
+    })
+    .then(()=> { getAll()})
+    }
+    const selectFw = (song)=>{
+      setSelectedW(song)
+    }
+
+    const handleUpdate = (song) => {
+      fetch(url +'/songs/' + song._id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(song),
+      }).then(() => getAll());
+    };
+
+    const handleDeleteW = (song)=> {
+      fetch(url +'/sevenw/' + song._id, {
+        method: "delete"
+      })
+      .then(() => {
+        getAll()
+      })
+     }
+
   return (
     <div className="App">
-     <Form/>
-     <Allsongs allSongs={getAllS}/>
+     <Form 
+     newS={emptyS}
+     handleSubmit={handleCreate}
+     />
+     <Allsongs 
+     allSongs={getAllS}
+     selectFw={selectFw}
+     handleDeleteW={handleDeleteW}
+     handleUpdate={handleUpdate}
+     />
     </div>
   );
 }

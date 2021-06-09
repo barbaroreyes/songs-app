@@ -18,6 +18,7 @@ input{
 .songs{
   border:1px solid;
   display:flex;
+  flex-wrap: wrap;
 }
 .single{
   padding: 30px;

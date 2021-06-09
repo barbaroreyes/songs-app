@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Display = ({allSongs}) => {
+const Display = ({allSongs,selectFw,handleDeleteW}) => {
  console.log('allSongs',allSongs)
   const loaded = () =>{
     return(
@@ -10,6 +10,12 @@ const Display = ({allSongs}) => {
               <h3>{item.name}</h3>
                  <p>{item.time}</p>
                  <p>{item.author}</p>
+                 <button onClick={() =>{
+                   selectFw(item)
+                  //  history.push("/edit")
+                   }}>Edit</button>
+               <button onClick={() =>{handleDeleteW(item)}}>Delete</button>
+
               </div>)
           })}
         </div>
