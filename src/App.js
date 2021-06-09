@@ -1,6 +1,7 @@
 import React ,{useState,useEffect}from 'react'
 import Form from './compononet/form'
 import Allsongs from './compononet/allsongs'
+import {Switch,Route,Link} from 'react-router-dom'
 import './App.css';
 
 function App() {
@@ -63,16 +64,39 @@ function App() {
 
   return (
     <div className="App">
-     <Form 
+       <h1>SONGS LISTING SITE</h1>
+      <hr />
+      <Link to='/create'>
+        <button>Add Song</button>
+      </Link>
+      <Switch>
+        <Route 
+         exact
+          path ='/'
+           render={(rp) =>(
+             <Allsongs {...rp}
+             allSongs={getAllS}
+             selectFw={selectFw}
+        handleDeleteW={handleDeleteW}
+        handleUpdate={handleUpdate}
+             />
+           )}
+         
+
+         />
+        />
+      <Form 
      newS={emptyS}
      handleSubmit={handleCreate}
      />
      <Allsongs 
-     allSongs={getAllS}
+     
      selectFw={selectFw}
      handleDeleteW={handleDeleteW}
      handleUpdate={handleUpdate}
      />
+      </Switch>
+    
     </div>
   );
 }

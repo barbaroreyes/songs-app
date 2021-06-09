@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Display = ({allSongs,selectFw,handleDeleteW,handleUpdate}) => {
+const Display = ({allSongs,selectFw,handleDeleteW,history}) => {
  console.log('allSongs',allSongs)
   const loaded = () =>{
     return(
@@ -12,7 +12,7 @@ const Display = ({allSongs,selectFw,handleDeleteW,handleUpdate}) => {
                  <p>{item.author}</p>
                  <button onClick={() =>{
                    selectFw(item.songId)
-                  //  history.push("/edit")
+                   history.push("/edit")
                    }}>Edit</button>
                <button onClick={() =>{handleDeleteW(item.songId)}}>Delete</button>
 
