@@ -5,7 +5,7 @@ const [formData, setFormData] = useState(props.newS)
 
 const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
-    props.handleUpdate(formData); // Submit to Parents desired function
+    props.handleSubmit(formData); // Submit to Parents desired function
      //Push back to display page
      props.history.push("/")
   };
