@@ -40,14 +40,14 @@ function App() {
       setSelectedW(song)
     }
 
-    const handleUpdate = (songId) => {
-      console.log("songId",songId)
-      fetch(url +'/songs/' + songId, {
+    const handleUpdate = (song) => {
+     
+      fetch(url +'/songs/' + song.songId, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(songId),
+        body: JSON.stringify(song),
       }).then(() => getAll());
     };
 
@@ -78,7 +78,7 @@ function App() {
              allSongs={getAllS}
              selectFw={selectFw}
         handleDeleteW={handleDeleteW}
-        handleUpdate={handleUpdate}
+       
              />
            )}
          />
@@ -95,14 +95,12 @@ function App() {
          render={(rp) =>(
           <Form 
           {...rp}
-          newS={emptyS}
+          newS={selectedW}
           handleUpdate={handleUpdate}
           />
          )}
          />
-        
-     
-    
+
       </Switch>
     
     </div>

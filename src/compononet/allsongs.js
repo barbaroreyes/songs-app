@@ -11,7 +11,7 @@ const Display = ({allSongs,selectFw,handleDeleteW,history}) => {
                  <p>{item.time}</p>
                  <p>{item.author}</p>
                  <button onClick={() =>{
-                   selectFw(item.songId)
+                   selectFw(item)
                    history.push("/edit")
                    }}>Edit</button>
                <button onClick={() =>{handleDeleteW(item.songId)}}>Delete</button>
