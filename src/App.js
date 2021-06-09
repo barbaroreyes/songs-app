@@ -39,22 +39,25 @@ function App() {
       setSelectedW(song)
     }
 
-    const handleUpdate = (song) => {
-      fetch(url +'/songs/' + song._id, {
+    const handleUpdate = (songId) => {
+      console.log("songId",songId)
+      fetch(url +'/songs/' + songId, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(song),
+        body: JSON.stringify(songId),
       }).then(() => getAll());
     };
 
-    const handleDeleteW = (song)=> {
-      fetch(url +'/sevenw/' + song._id, {
+    const handleDeleteW = (songId)=> {
+      console.log('song',songId)
+      fetch(url +'/songs/' + songId, {
         method: "delete"
       })
       .then(() => {
         getAll()
+        console.log('delete')
       })
      }
 
