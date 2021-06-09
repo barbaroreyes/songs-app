@@ -1,7 +1,11 @@
 import React ,{useState}from 'react'
 
 const Form = (props) => {
-const [form, setForm] = useState()
+const [form, setForm] = useState({})
+ const inputChange = ()=>{
+     
+ }
+
     return (
         <form>
             <input  
