@@ -81,20 +81,28 @@ function App() {
         handleUpdate={handleUpdate}
              />
            )}
-         
-
          />
-        />
-      <Form 
-     newS={emptyS}
-     handleSubmit={handleCreate}
-     />
-     <Allsongs 
+         <Route exact path='/create'
+         render={(rp) =>(
+          <Form 
+          {...rp}
+          newS={emptyS}
+          handleSubmit={handleCreate}
+          />
+         )}
+         />
+          <Route exact path='/edit'
+         render={(rp) =>(
+          <Form 
+          {...rp}
+          newS={emptyS}
+          handleUpdate={handleUpdate}
+          />
+         )}
+         />
+        
      
-     selectFw={selectFw}
-     handleDeleteW={handleDeleteW}
-     handleUpdate={handleUpdate}
-     />
+    
       </Switch>
     
     </div>

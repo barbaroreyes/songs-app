@@ -1,4 +1,5 @@
 .App {
+  text-align: center;
   display:flex;
   flex-direction:column;
 }
@@ -8,7 +9,7 @@ form{
   flex-direction:column;
   justify-content:center;
   align-items:center;
- border:1px solid;
+ 
  padding:20px;
 }
 input{
@@ -16,7 +17,7 @@ input{
 }
 
 .songs{
-  border:1px solid;
+  
   display:flex;
   flex-wrap: wrap;
 }

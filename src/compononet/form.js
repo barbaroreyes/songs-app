@@ -7,6 +7,7 @@ const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
      //Push back to display page
+     props.history.push("/")
   };
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
