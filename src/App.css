@@ -29,10 +29,11 @@ input{
 }
 .single{
   padding: 50px;
-  border:6px solid;
+  /* border:6px solid; */
   width: 250px;
   margin: 10px;
   text-transform: uppercase;
   background-color: black;
   color:rgb(246, 242, 242);
+  border-radius: 40px 10px;
 }

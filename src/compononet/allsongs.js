@@ -6,7 +6,7 @@ const Display = ({allSongs,selectFw,handleDeleteW,history}) => {
     return(
         <div className="songs  ">
           {allSongs.map((item,i)=>{
-            return (<div className='single grow bg-green' key={i}>
+            return (<div className='single grow bg-green shadow-5' key={i}>
               <h3>{item.name}</h3>
                  <p>{item.time}</p>
                  <p>{item.author}</p>
