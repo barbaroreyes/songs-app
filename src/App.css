@@ -5,6 +5,9 @@
   justify-content:center;
   align-items:center;
   border: 1px solid;
+  background-color: black;
+  color:#fff;
+  font-size: 22px;
 }
 
 form{
@@ -25,8 +28,8 @@ input{
   flex-wrap: wrap;
 }
 .single{
-  padding: 30px;
+  padding: 40px;
   border:1px solid;
-  width: 100px;
+  width: 150px;
   margin: 10px;
 }
