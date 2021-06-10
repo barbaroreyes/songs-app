@@ -88,7 +88,7 @@ function App() {
           {...rp}
           newS={emptyS}
           handleSubmit={handleCreate}
-          handleUpdate={handleUpdate}
+          
           />
          )}
          />
